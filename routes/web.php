@@ -25,3 +25,7 @@ Route::get('/contact-page', function () {
 Route::get('/service-page/{service_id}/{service_name?}', function ($service_id,$service_name = null) {
     return "service".$service_id."".$service_name;
 })->name("service");
+
+Route::get('/search/{keywords}', function ($keywords) {
+    echo "$keywords";
+})->where("keywords" , ".*");
