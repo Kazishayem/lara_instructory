@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 })->name("home");
 Route::get('/about-us', function () {
     return view("about");
@@ -22,10 +22,10 @@ Route::get('/about-us', function () {
 Route::get('/contact-page', function () {
     return view("contact");
 })->name("contact");
-Route::get('/service-page/{service_id}/{service_name?}', function ($service_id,$service_name = null) {
-    return "service".$service_id."".$service_name;
+Route::get('/service-page', function () {
+    return view("service");
 })->name("service");
 
-Route::get('/search/{keywords}', function ($keywords) {
-    echo "$keywords";
-})->where("keywords" , ".*");
+// Route::get('/search/{keywords}', function ($keywords) {
+//     echo "$keywords";
+// })->where("keywords" , ".*");
